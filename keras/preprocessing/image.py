@@ -247,9 +247,9 @@ class ImageDataGenerator(object):
     def reset(self):
         self.batch_index = 0
 
-    def _flow_index(self, N, batch_size=32, shuffle=False, seed=None):
+    def _flow_index(self, N, batch_size=32, shuffle=False, seed=None):   
+        index_array = np.arange(N)
         while 1:
-            index_array = np.arange(N)
             if self.batch_index == 0:
                 if shuffle:
                     if seed is not None:
